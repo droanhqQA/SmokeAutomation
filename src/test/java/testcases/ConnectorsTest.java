@@ -72,7 +72,7 @@ public class ConnectorsTest {
 		final URL driver_path = AddUserTest.class.getResource(driver_type);
 
 		System.setProperty("webdriver.chrome.driver",
-				(driver_path.getFile()));
+				"/var/lib/jenkins/driver/chromedriver");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("--headless");
 				options.addArguments("--window-size=1920,1080");
