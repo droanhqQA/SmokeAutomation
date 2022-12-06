@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="googleSheet(failed)">
+    <parameter name="connectionString" value="Y"/>
+    <parameter name="sheet" value="3"/>
+    <parameter name="db" value="googleSheet"/>
+    <classes>
+      <class name="testcases.GoogleSheetTest">
+        <methods>
+          <include name="driverClose"/>
+          <include name="TestGoogleSheet" invocation-numbers="0"/>
+          <include name="startTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcases.GoogleSheetTest -->
+    </classes>
+  </test> <!-- googleSheet(failed) -->
+</suite> <!-- Failed suite [Suite] -->
