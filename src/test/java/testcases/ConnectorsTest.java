@@ -99,7 +99,7 @@ public class ConnectorsTest {
 	}
 //@Ignore
 
-	@Test(priority = 1)
+	@Test(priority = 1,retryAnalyzer = RetryAnalyzer.class)
 	@Parameters({ "sheet", "db" })
 	public void connectionTest(String sheet, String DB) {
 		System.out.println("Inside Connection Test " + " " + Integer.parseInt(sheet));
@@ -123,7 +123,7 @@ public class ConnectorsTest {
 
 	// @Ignore
 	@Parameters({ "db", "sheet" })
-	@Test(priority = 2)
+	@Test(priority = 2,retryAnalyzer = RetryAnalyzer.class)
 	public void saveConnection(String db, String sheet) {
 
 		// connector.connectorDetails("");
@@ -143,7 +143,7 @@ public class ConnectorsTest {
 
 	//@Ignore
 	// (dependsOnMethods = "saveConnection")
-	@Test(priority = 3)
+	@Test(priority = 3,retryAnalyzer = RetryAnalyzer.class)
 	@Parameters({ "db", "sheet" })
 	public void addQuery(@Optional String db, String sheet) throws InterruptedException, IOException {
 		// fs = new FileInputStream("D:\\Nitin\\DronaDeletecs\\Automation.xlsx");
@@ -187,7 +187,7 @@ public class ConnectorsTest {
 		AssertJUnit.assertEquals(res, "true");
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	@Parameters({ "sheet", "db" })
 	public void connectionSaveApi(int sheetNo, String db) {
 		String res;
@@ -198,7 +198,7 @@ public class ConnectorsTest {
 		AssertJUnit.assertEquals(res, "true");
 	}
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	@Parameters({ "sheet", "db" })
 	public void connectionAddApi(int sheetNo, String db) {
 		String res;
