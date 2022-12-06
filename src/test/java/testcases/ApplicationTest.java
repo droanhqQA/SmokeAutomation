@@ -66,7 +66,7 @@ public class ApplicationTest {
 		final URL driver_path = ApplicationTest.class.getResource(driver_type);
 	    System.out.println(driver_path.getFile());
 		
-		System.setProperty("webdriver.chrome.driver", driver_path.getFile());
+		System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/driver/chromedriver");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("headless");
