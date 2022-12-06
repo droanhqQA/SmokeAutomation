@@ -1,0 +1,8 @@
+com\connectors\AddQuery.class
+com\manageusers\AddCheckUsers.class
+com\connectors\AddingConnector.class
+com\dao\UserLogin.class
+com\dao\UserDAO.class
+com\utils\TakeScreenshots.class
+com\utils\GetTimeouts.class
+com\applications\AppsNavFunc.class
