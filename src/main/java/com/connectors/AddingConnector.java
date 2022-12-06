@@ -57,7 +57,7 @@ public class AddingConnector {
 		final URL resource = AddingConnector.class.getResource("/Automation.xlsx");
 	       System.out.println(resource);
 		
-		FileInputStream  fs = new FileInputStream((resource.toString().substring("file:/".length(),resource.toString().length())));
+		FileInputStream  fs = new FileInputStream(resource.getFile());
 		
 		//Creating a workbook
 		XSSFWorkbook workbook = new XSSFWorkbook(fs);
@@ -117,7 +117,7 @@ public class AddingConnector {
 		final URL resource = AddingConnector.class.getResource("/Automation.xlsx");
 	       System.out.println(resource);
 		
-		FileInputStream  fs = new FileInputStream((resource.toString().substring("file:/".length(),resource.toString().length())));
+		FileInputStream  fs = new FileInputStream(resource.getFile());
 		//Creating a workbook
 		XSSFWorkbook workbook = new XSSFWorkbook(fs);
 		XSSFSheet user_sheet = workbook.getSheetAt(0);
@@ -172,7 +172,7 @@ public class AddingConnector {
 		final URL resource = AddingConnector.class.getResource("/Automation.xlsx");
 	       System.out.println(resource);
 		
-		FileInputStream  fs = new FileInputStream((resource.toString().substring("file:/".length(),resource.toString().length())));
+		FileInputStream  fs = new FileInputStream(resource.getFile());
 		//Creating a workbook
 		XSSFWorkbook workbook = new XSSFWorkbook(fs);
 		//XSSFSheet con_sheet = workbook.getSheetAt(sheet_no);
@@ -247,7 +247,7 @@ public class AddingConnector {
 			final URL resource = AddingConnector.class.getResource("/Automation.xlsx");
 		       System.out.println(resource);
 			
-			fs = new FileInputStream((resource.toString().substring("file:/".length(),resource.toString().length())));
+			fs = new FileInputStream(resource.getFile());
 			workbook = new XSSFWorkbook(fs);
 			con_sheet = workbook.getSheetAt(sheet_no);
 		} catch (IOException e) {
@@ -371,7 +371,7 @@ public class AddingConnector {
 			final URL resource = AddingConnector.class.getResource("/Automation.xlsx");
 		       System.out.println(resource);
 			
-			 fs = new FileInputStream((resource.toString().substring("file:/".length(),resource.toString().length())));
+			 fs = new FileInputStream(resource.getFile());
 			workbook = new XSSFWorkbook(fs);
 			con_sheet = workbook.getSheetAt(sheet_no);
 		} catch (IOException e) {
