@@ -61,11 +61,12 @@
 			</class>
 		</classes>
 	</test> 
+	<!--
 	 <test name="googleSheet"> <parameter name="connectionString" value="Y" 
 		/> <parameter name="sheet" value="3" /> <parameter name="db" value="googleSheet" 
 		/> <classes> <class name="testcases.GoogleSheetTest"> <methods> <include 
 		name="TestGoogleSheet" /> </methods> </class> </classes> </test>
- 
+ -->
 	<test name="ApplicationTest">
 		<classes>
 			<class name="testcases.ApplicationTest" />
