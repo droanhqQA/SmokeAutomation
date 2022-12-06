@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-	 <test name="googleSheet"> <parameter name="connectionString" value="Y" 
-		/> <parameter name="sheet" value="3" /> <parameter name="db" value="googleSheet" 
-		/> <classes> <class name="testcases.GoogleSheetTest"> <methods> <include 
-		name="TestGoogleSheet" /> </methods> </class> </classes> </test>
- 
-</suite>
