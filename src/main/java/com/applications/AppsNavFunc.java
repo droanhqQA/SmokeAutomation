@@ -431,7 +431,7 @@ public class AppsNavFunc {
 		final URL resource = AppsNavFunc.class.getResource("/ExportAuto.json");
 	       System.out.println(resource);
 		
-		String exportApp_path = ((resource.toString().substring("file:/".length(),resource.toString().length())));
+		String exportApp_path = resource.getFile();
 		driver.findElement(By.className("add-microapp-card-image")).click();
 		driver.findElement(By.xpath("//*[@data-type='upload']")).click();
 		driver.findElement(By.xpath("//*[@id='json-file-import']"))
