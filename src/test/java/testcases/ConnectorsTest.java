@@ -149,7 +149,7 @@ public class ConnectorsTest {
 		// fs = new FileInputStream("D:\\Nitin\\DronaDeletecs\\Automation.xlsx");
 		final URL resource = ConnectorsTest.class.getResource("/Automation.xlsx");
 		System.out.println(resource);
-		fs = new FileInputStream((resource.toString().substring("file:/".length(), resource.toString().length())));
+		fs = new FileInputStream(resource.getFile());
 		int sheetNo = Integer.parseInt(sheet);
 		System.out.println("Sheet number: " + sheetNo);
 		if (db.equalsIgnoreCase("mongo")) {
