@@ -54,6 +54,7 @@ public class AddUserTest {
 				ChromeOptions options = new ChromeOptions();
 						options.addArguments("headless");
 						options.addArguments("incognito");
+						options.addArguments("window-size=1920,1080");
 	
 		driver = new ChromeDriver(options);
 		driver.get("https://studio.dronahq.com/apps");
