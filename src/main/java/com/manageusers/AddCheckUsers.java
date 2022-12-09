@@ -52,7 +52,12 @@ public class AddCheckUsers {
 		driver.findElement(By.xpath("//div[@class='invite-user-actions']/div")).click();
 		new WebDriverWait(driver, Duration.ofSeconds(60))
 		.until(waitWrappertoHide());
-		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		driver.findElement(By.xpath("//*[@class='search-user-input']")).sendKeys(email);
 		driver.findElement(By.xpath("//div[text()='Apply Filters']")).click();
 		try {
