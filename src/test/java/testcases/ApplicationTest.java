@@ -141,7 +141,7 @@ public class ApplicationTest {
 		//wait.until(waitForSave());
 		//driver.findElement(By.xpath("//button[@class='sideshow-next-step-button']")).click();
 		//wait.until(waitForSave());
-		new TakeScreenshots().takeScreenShot("CreateApp","Apps",driver);
+		
 		AssertJUnit.assertEquals(title, "AutoApp");
 		
 	}
@@ -160,7 +160,7 @@ public class ApplicationTest {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	    String un_name = driver.findElement(By.xpath("//div[@class='textinput_container']/a")).getAttribute("data-value");
 	    System.out.println(un_name);
-	    new TakeScreenshots().takeScreenShot("AddControlsss","Apps",driver);
+	    
 	    wait.until(navFunc.waitForSave());
 	    AssertJUnit.assertEquals(un_name,"tablegrid");
 	    
