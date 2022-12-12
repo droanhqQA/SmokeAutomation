@@ -442,14 +442,26 @@ public class AppsNavFunc {
 		System.out.println(success);
 		
 		driver.findElement(By.xpath("//*[@class='event-button-click']")).click();
-		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		String winHandleBefore = driver.getWindowHandle();
 		System.out.println(winHandleBefore.toString());
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		System.out.println("No. of tabs: " + tabs.size());
-		while(tabs.size()!=2)
+		if(tabs.size()!=2)
 		{
+			driver.findElement(By.xpath("//*[@class='event-button-click']")).click();
+			try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 			 tabs = new ArrayList<String>(driver.getWindowHandles());
 		}
 		System.out.println("No. of tabs: " + tabs.size());
