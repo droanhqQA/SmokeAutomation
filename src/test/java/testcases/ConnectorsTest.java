@@ -158,21 +158,39 @@ public class ConnectorsTest {
 		} else {
 			System.out.println("Postgre");
 			new AddQuery(fs, sheetNo).postgreQuery(driver);
-		}
-
-		driver.manage().timeouts().implicitlyWait(25, TimeUnit.MILLISECONDS);
-		@SuppressWarnings("deprecation")
-//		WebDriverWait wait = new WebDriverWait(driver, 20);
-//		wait.until(ExpectedConditions.textToBe(By.xpath("//div[@class='hq-card p-4 messages-container']/descendant::div[@class='hq-title']"), "Configuration test successful."));
+		}WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));		
+		Thread.sleep(1000);
 		String queryTest = driver
 				.findElement(
 						By.xpath("//div[@class='hq-card p-4 messages-container']/descendant::div[@class='hq-title']"))
 				.getText();
 		System.out.println(queryTest);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//*[@class='hq-primary-btn d-flex align-center pointer savequery']")).click();
+		
 
-		driver.findElement(By.xpath("//header/div[2]/a[2]")).click();// cross-button
+		//driver.findElement(By.xpath("//header/div[2]/a[2]")).click();// cross-button
+		boolean res=true;
+		String queryTest_expected="executed successfully.";
+		if(queryTest.contains(queryTest_expected))
+		{
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='hq-primary-btn d-flex align-center pointer savequery']")));
+			driver.findElement(By.xpath("//*[@class='hq-primary-btn d-flex align-center pointer savequery']")).click();
+			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[contains(@class,'connector-success')]"))));
+			boolean query_success=driver.findElement(By.xpath("//*[contains(@class,'connector-success')]")).isDisplayed();
+			System.out.println(query_success);
+			String msg1="Fail";
+			Thread.sleep(1000);
+			if(query_success)
+				 msg1= driver.findElement(By.xpath("//*[contains(@class,'connector-success')]/descendant::div[contains(@class,'hq-title')]")).getText();
+			System.out.println(msg1);
+			res=msg1.contains("Query Added");
+		}
+		else
+			res=false;
+		
+		Assert.assertTrue(res);
+		
 
 	}
 
