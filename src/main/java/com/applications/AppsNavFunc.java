@@ -171,7 +171,7 @@ public class AppsNavFunc {
 		addControl(driver);
 //		if(driver.findElement(By.xpath("//div[@class='event-button-click']"))!=null)
 //			driver.findElement(By.xpath("//div[@class='event-button-click']")).click();
-		System.out.println(driver.findElement(By.xpath("/html/body/div[4]/div[15]/div[1]/div[2]/div[3]/button[4]")).isEnabled());
+//		System.out.println(driver.findElement(By.xpath("/html/body/div[4]/div[15]/div[1]/div[2]/div[3]/button[4]")).isEnabled());
 		explicitwait.until(ExpectedConditions.elementToBeClickable(tablegrid));
 		driver.findElement(tablegrid).click();//click tablegrid
 		getImplicit();
@@ -386,7 +386,7 @@ public class AppsNavFunc {
 
 	public String checkPreview(WebDriver driver)
 	{
-		driver.findElement(By.xpath("/html/body/div[4]/div[15]/div[1]/div[2]/div[3]/button[4]/img")).click();//preview btn
+		driver.findElement(By.xpath("//button[contains(@class,'preview')]")).click();//preview btn
 		
 			try {
 			Thread.sleep(30000);
